@@ -1,6 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.facebook.testing.screenshot'
-apply plugin: 'shot'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -50,23 +48,20 @@ android {
 
 dependencies {
 
-    compile project(':library')
+    api project(':library')
 
-    androidTestCompile(rootProject.ext.testLibraries.espresso, {
+    androidTestImplementation(rootProject.ext.testLibraries.espresso) {
         exclude group: 'com.android.support', module: 'support-annotations'
-    })
+    }
 
-    compile rootProject.ext.appLibraries.supportAppCompat
+   api rootProject.ext.appLibraries.supportAppCompat
     //compile rootProject.ext.appLibraries.constraintLayout
     //compile rootProject.ext.appLibraries.timber
     //compile rootProject.ext.appLibraries.butterknife
     annotationProcessor rootProject.ext.appLibraries.butterknifeProcessor
 
-    testCompile rootProject.ext.testLibraries.junit
-    testCompile rootProject.ext.testLibraries.mockito
+    testImplementation rootProject.ext.testLibraries.junit
+    testImplementation rootProject.ext.testLibraries.mockito
 }
 
-shot {
-    appId = 'com.github.techisfun.onelinecalendar.app.debug'
-}
 

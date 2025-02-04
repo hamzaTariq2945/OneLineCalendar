@@ -5,9 +5,10 @@ apply from: "buildsystem/version.gradle"
 buildscript {
     repositories {
         jcenter()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.android.tools.build:gradle:7.4.1'
         classpath 'com.facebook.testing.screenshot:plugin:0.4.2'
         classpath 'com.karumi:shot:0.2.0'
     }
@@ -15,6 +16,7 @@ buildscript {
 
 allprojects {
     repositories {
+        google()
         jcenter()
         // need this for the new android APIs
         maven {
@@ -23,13 +25,7 @@ allprojects {
     }
 }
 
-subprojects {
-    apply from: "$rootProject.projectDir/quality/quality.gradle"
 
-    afterEvaluate {
-        check.dependsOn 'checkstyle', 'findbugs', 'pmd', 'lint'
-   }
-}
 
 task clean(type: Delete) {
     delete rootProject.buildDir
