@@ -1,7 +1,7 @@
 package com.github.techisfun.onelinecalendar;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.format.DateUtils;
 
 import java.text.SimpleDateFormat;
@@ -15,7 +15,7 @@ import java.util.Locale;
 class SimpleDate {
     static final int MONTH_TYPE = 1;
     static final int DATE_TYPE = 2;
-    private static SimpleDateFormat sMonthFormat = new SimpleDateFormat("MMM", Locale.getDefault());
+    private static SimpleDateFormat sMonthFormat = new SimpleDateFormat("MMMM", Locale.getDefault());
     private int mDay;
     private int mMonth;
     private int mYear;
@@ -100,5 +100,11 @@ class SimpleDate {
         calendar.setTime(mDate);
         calendar.add(Calendar.MONTH, -1);
         return sMonthFormat.format(calendar.getTime());
+    }
+
+    String getFormattedMonthName(int month) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.MONTH, month);  // Set the month (0-based index)
+        return calendar.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault());
     }
 }

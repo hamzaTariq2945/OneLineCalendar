@@ -1,11 +1,11 @@
 package com.github.techisfun.onelinecalendar;
 
 import android.content.Context;
-import android.support.annotation.AttrRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.AttrRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -77,18 +77,14 @@ public class OneLineCalendarView extends FrameLayout implements OneLineCalendarC
 
     @Override
     public void populateWithItems(final List<SimpleDate> simpleDateList) {
-        mStickyHeaderTextView.setText(simpleDateList.get(0).toString());
+        mStickyHeaderTextView.setText(simpleDateList.get(0).getFormattedMonthName(simpleDateList.get(0).getMonth()));
         mAdapter = new RecyclerView.Adapter<AbstracViewHolder>() {
             @Override
             public AbstracViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
                 LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-                if (viewType == SimpleDate.MONTH_TYPE) {
-                    View view = inflater.inflate(R.layout.item_month_layout, parent, false);
-                    return new MonthViewHolder(view);
-                } else {
                     View view = inflater.inflate(R.layout.item_day_layout, parent, false);
                     return new DayViewHolder(view);
-                }
+
             }
 
             @Override

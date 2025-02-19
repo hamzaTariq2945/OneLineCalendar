@@ -3,9 +3,11 @@
 
     <attr name="itemDayBackground" format="reference"/>
     <attr name="itemDayNumberTextColor" format="reference"/>
+    <attr name="itemDayNumberBackground" format="reference"/>
     <attr name="itemDayNameTextColor" format="reference"/>
 
-    <attr name="itemMonthBackground" format="reference"/>
-    <attr name="itemMonthTextColor" format="reference"/>
+    <attr name="monthBackground" format="reference"/>
+    <attr name="monthTextColor" format="reference"/>
+    <attr name="monthTextSize" format="dimension"/>
 
 </resources>

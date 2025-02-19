@@ -2,8 +2,8 @@ ext {
     appCompatVersion = "25.2.0"
     constraintLayoutVersion = "1.0.2"
     timberVersion = "4.5.1"
-    butterknifeVersion = "8.5.1"
-    butterknifeProcessorVersion = "8.5.1"
+    butterknifeVersion = "10.2.3"
+    butterknifeProcessorVersion = "10.2.3"
 
     junitVersion = "4.12"
     espressoVersion = "2.2.2"
@@ -11,17 +11,17 @@ ext {
     robolectricversion = "3.1.4"
 
     appLibraries = [
-            supportAppCompat    : "com.android.support:appcompat-v7:${appCompatVersion}",
+            supportAppCompat    : 'androidx.appcompat:appcompat:1.0.0',
             constraintLayout    : "com.android.support.constraint:constraint-layout:${constraintLayoutVersion}",
             timber              : "com.jakewharton.timber:timber:${timberVersion}",
             butterknife         : "com.jakewharton:butterknife:${butterknifeVersion}",
             butterknifeProcessor: "com.jakewharton:butterknife-compiler:${butterknifeProcessorVersion}",
-            recyclerView        : "com.android.support:recyclerview-v7:${appCompatVersion}"
+            recyclerView        : 'androidx.recyclerview:recyclerview:1.0.0'
     ]
 
     testLibraries = [
             junit      : "junit:junit:${junitVersion}",
-            espresso   : "com.android.support.test.espresso:espresso-core:${espressoVersion}",
+            espresso   : 'androidx.test.espresso:espresso-core:3.1.0',
             mockito    : "org.mockito:mockito-core:${mockitoVersion}",
             robolectric: "org.robolectric:robolectric:${robolectricversion}"
     ]

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="@dimen/item_month_width"
+             android:layout_width="match_parent"
              android:layout_height="match_parent"
-             android:background="?attr/itemMonthBackground"
-             tools:background="#ff0000"
+             android:background="?attr/monthBackground"
     >
 
     <TextView
@@ -12,11 +11,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:rotation="-90"
-        android:textAllCaps="true"
-        android:textColor="?attr/itemMonthTextColor"
-        tools:text="MAR"
-        tools:textColor="#fff"
+        android:textColor="?attr/monthTextColor"
+        android:textSize="?attr/monthTextSize"
+        tools:text="March"
+        android:textStyle="bold"
+        tools:textColor="#000"
         />
 
 </FrameLayout>

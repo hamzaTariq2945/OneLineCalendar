@@ -1,7 +1,7 @@
 package com.github.techisfun.onelinecalendar;
 
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -26,13 +26,7 @@ class OneLineCalendarPresenter implements OneLineCalendarContract.Presenter {
         calendar.setTime(today.getTime());
 
         for (int i = 0; i < MAX_DAYS; i++) {
-            if (calendar.get(Calendar.DATE) == 1) {
-                mSimpleDateList.add(SimpleDate.monthFrom(calendar));
-            } else if (i == 0) {
-                mSimpleDateList.add(SimpleDate.monthFrom(calendar));
-            }
             mSimpleDateList.add(SimpleDate.dateFrom(calendar, today));
-
             calendar.add(Calendar.DATE, 1);
         }
     }
@@ -78,10 +72,9 @@ class OneLineCalendarPresenter implements OneLineCalendarContract.Presenter {
                 String text = null;
                 boolean isRightScrolling = (dx >= 0);
                 SimpleDate simpleDate = mSimpleDateList.get(firstVisibleItemPosition);
-
-                if (simpleDate.getType() == SimpleDate.MONTH_TYPE) {
+                if (simpleDate.getDay() == 1 ) {
                     if (isRightScrolling) {
-                        text = simpleDate.toString();
+                        text = simpleDate.getFormattedMonthName(simpleDate.getMonth());
                     } else {
                         text = simpleDate.getPreviousMonthFormatted();
                     }

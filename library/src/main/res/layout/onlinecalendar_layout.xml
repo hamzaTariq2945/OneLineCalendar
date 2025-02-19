@@ -5,17 +5,26 @@
              android:orientation="horizontal"
     >
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        />
+        android:orientation="vertical">
+        <include
+            android:id="@+id/sticky_header"
+            layout="@layout/item_month_layout"
+            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
 
-    <include
-        android:id="@+id/sticky_header"
-        layout="@layout/item_month_layout"
-        android:layout_width="@dimen/item_month_width"
-        android:layout_height="match_parent"
-        />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+    </LinearLayout>
+
+
 
 </FrameLayout>

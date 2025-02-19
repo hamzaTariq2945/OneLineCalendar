@@ -34,8 +34,9 @@ dependencies {
     <item name="itemDayBackground">@drawable/selectable_background</item>
     <item name="itemDayNameTextColor">@color/day_name_text_color</item>
     <item name="itemDayNumberTextColor">@color/day_number_text_color</item>
-    <item name="itemMonthBackground">@color/selected_bg</item>
-    <item name="itemMonthTextColor">@android:color/white</item>
+    <item name="monthBackground">@color/selected_bg</item>
+    <item name="monthTextColor">@android:color/white</item>
+    <item name="monthTextSize">@android:color/white</item>
 </style>
 ```
 

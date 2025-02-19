@@ -2,7 +2,7 @@ package com.github.techisfun.onelinecalendar;
 
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.support.test.InstrumentationRegistry;
+import androidx.test.platform.app.InstrumentationRegistry;
 
 import org.junit.rules.TestRule;
 import org.junit.runner.Description;
